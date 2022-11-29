@@ -1,4 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
 	name: "cart",
@@ -7,6 +7,10 @@ const cartSlice = createSlice({
 		totalQuantity: 0,
 	},
 	reducers: {
+		replaceCart(state, action) {
+			state.items = action.payload.items;
+		},
+
 		addItemToCart(state, action) {
 			const newItem = action.payload;
 
